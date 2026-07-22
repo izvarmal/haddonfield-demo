@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+change this html from Downtown Haddonfield to the Ridgewod Business Alliance. They do not yet have an active website so it would be great to have a very well designed but generic one for them. i am going to show this to steven grillo the new executive director and maybe someone from his board. doc: <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -31,10 +31,8 @@
   p{margin:0;}
   .wrap{max-width:1040px;margin:0 auto;padding:0 32px;}
   @media (max-width:640px){ .wrap{padding:0 20px;} }
-
   .ribbon{background:var(--brick);color:#F6E9E4;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:8px 16px;}
   .ribbon b{color:#fff;font-weight:600;}
-
   .hero{background:var(--navy);color:#fff;padding:80px 0 46px;position:relative;overflow:hidden;}
   .hero::after{content:"";position:absolute;right:-100px;top:-100px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle, rgba(157,207,250,0.15), transparent 70%);}
   .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sky);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
@@ -112,10 +110,8 @@
 </style>
 </head>
 <body>
-
   <!-- Brown disclaimer ribbon (kept) -->
   <div class="ribbon"><b>Concept preview</b> — prepared by Storefront Mastery for Partnership for Rutherford. Not a live site.</div>
-
   <!-- Navy hero section starts immediately after -->
   <section class="hero">
     <div class="wrap">
@@ -132,7 +128,6 @@
       </div>
     </div>
   </section>
-
   <section class="arguments">
     <div class="wrap">
       <div class="section-head reveal">
@@ -167,7 +162,6 @@
       </div>
     </div>
   </section>
-
   <section class="evidence">
     <div class="wrap">
       <div class="evidence-head reveal">And Rutherford already has the raw material for this to work</div>
@@ -179,7 +173,6 @@
       </div>
     </div>
   </section>
-
   <section class="calc" id="calc">
     <div class="wrap">
       <div class="section-head reveal">
@@ -236,7 +229,6 @@
       </div>
     </div>
   </section>
-
   <section class="cta">
     <div class="wrap">
       <div class="cta-shell reveal">
@@ -255,7 +247,6 @@
       </div>
     </div>
   </section>
-
   <footer>
     <div class="wrap">
       <div class="foot-note">
@@ -263,14 +254,12 @@
       </div>
     </div>
   </footer>
-
 <script>
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:0.12});
   revealEls.forEach(el=>io.observe(el));
-
   const MULTIPLIERS = { comparison: 0.32, food: 0.24, service: 0.14 };
   const PRIORITY_COPY = {
     traffic: "More monthly customers are the biggest driver here: 200+ neighboring businesses are already pulling foot traffic past your door.",
@@ -278,22 +267,18 @@
     risk: "Beyond the revenue number, the strongest argument for a business like this is survival: clustering with compatible peers has been shown to reduce failure rates over time.",
     explore: "This is a starting estimate. Adjust the numbers above to match your actual business as your plans firm up."
   };
-
   function fmtMoney(n){
     return '$' + Math.round(n).toLocaleString('en-US');
   }
-
   document.getElementById('calcBtn').addEventListener('click', ()=>{
     const category = document.getElementById('category').value;
     const ticket = parseFloat(document.getElementById('ticket').value) || 0;
     const customers = parseFloat(document.getElementById('customers').value) || 0;
     const priority = document.getElementById('priority').value;
-
     const baseline = ticket * customers;
     const lift = MULTIPLIERS[category];
     const Rutherford = baseline * (1 + lift);
     const delta = Rutherford - baseline;
-
     document.getElementById('deltaOut').textContent = fmtMoney(delta) + ' / month';
     document.getElementById('deltaAnnual').textContent = fmtMoney(delta*12) + ' added per year, on a baseline of ' + fmtMoney(baseline) + '/month';
     document.getElementById('priorityCopy').textContent = PRIORITY_COPY[priority];
